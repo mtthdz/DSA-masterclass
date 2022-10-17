@@ -1,0 +1,11 @@
+{
+  "name": "dsa-masterclass",
+  "version": "1.0.0",
+  "description": "Notes and Problem sets from the Udemy course, \"JavaScript Algorithms and Data Structures Masterclass\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Hernandez",
+  "license": "ISC"
+}
