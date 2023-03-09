@@ -16,8 +16,7 @@
  * same([1, 2, 1], [4, 4, 1]) // false
  */
 
-// Naive solution
-// time complexity of O(n^2)
+// Naive solution, O(n^2)
 function same_naive(arr1, arr2) {
     // ensure arr1 and arr2 are same length
     if(arr1.length !== arr2.length) {
@@ -53,7 +52,7 @@ function same_fcp(arr1, arr2) {
         frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
     }
     for(let val of arr2) {
-        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
     }
 
     for(let key in frequencyCounter1) {
@@ -81,7 +80,7 @@ function same_fcp(arr1, arr2) {
  * anagram('aaz', 'zza')         // false
  * anagram('anagram', 'nagaram') // true
  * anagram('rat', 'car')         // false
- * anagram('awesome', 'awesom')  //false
+ * anagram('awesome', 'awesom')  // false
  * 
  * @param first  [arr]
  * @param second [arr]
