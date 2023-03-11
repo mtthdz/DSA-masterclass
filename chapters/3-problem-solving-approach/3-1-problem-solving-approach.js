@@ -1,5 +1,5 @@
 /**
- * Chapter 03 - Algorithms and Problem Solving Approach
+ * Chapter 3 - Algorithms and Problem Solving Approach
  * 
  * An algorithm is a process or set of steps to accomplish
  * a certain task.
