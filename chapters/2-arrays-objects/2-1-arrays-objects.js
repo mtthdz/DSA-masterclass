@@ -1,5 +1,5 @@
 /**
- * Chapter 2 - Analyzing Performance of Arrays & Objects
+ * Chapter 2.1 - Analyzing Performance of Arrays & Objects
  * 
  * Objects are unordered and use key value pairs.
  * Good for fast access/insertion/removal O(1).

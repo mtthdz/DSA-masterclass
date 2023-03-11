@@ -1,5 +1,5 @@
 /**
- * Chapter 01 - Big O
+ * Chapter 1.1 - Big O
  * 
  * Numeric representation of an algorithm's performance.
  * The problem with timing algorithms is that not only will different 
