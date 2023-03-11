@@ -34,8 +34,6 @@ function sumZeroNaive(arr) {
  * Note: we don't need to explicity state if (sum < 0),
  * it's present for quick reference.
  *
- * @param {*} arr 
- * @returns 
  */
 function sumZero(arr) {
     let left = 0;
