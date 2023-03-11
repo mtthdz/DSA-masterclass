@@ -1,6 +1,12 @@
 /**
  * Chapter 4.3 - Sliding Window
  * 
+ * This pattern involves creating a window which can either
+ * be an array or number from one position to another.
+ * Depending on a certain condition, the window either increases
+ * or closes (and a new window is created).
+ * It's really useful for keeping track of a subset of data.
+ * 
  * Example 4.3A
  * Write a function called maxSubarraySum which accepts
  * and array of intergers and a number n. The fn should
