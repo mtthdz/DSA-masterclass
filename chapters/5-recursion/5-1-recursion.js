@@ -16,6 +16,8 @@
  * 1. base case
  * 2. different input
  */
+
+// Example 5.1A
 function countDown(num) {
   // base case
   if (num <= 0) {
@@ -30,7 +32,7 @@ function countDown(num) {
 }
 
 /**
- * 
+ * Example 5.1B
  * Fn will add all the numbers in a range
  * from 0 to num
  * 
@@ -40,4 +42,22 @@ function countDown(num) {
 function sumRange(num) {
   if (num === 1) return 1;
   return num + sumRange(num - 1);
+}
+
+/**
+ * Example 5.1C
+ * Factorial Iteratively versus Recursively
+ * Factorials is multiplying a number all the way down to 0
+ */
+function factorialIteratively(num) {
+  let total = 1;
+  for (let i = num; i > 1; i--) {
+    total *= i;
+  }
+  return total;
+}
+
+function factorialRecursively(num) {
+  if (num === 1) return 1;
+  return num * factorialRecursively(num - 1);
 }
