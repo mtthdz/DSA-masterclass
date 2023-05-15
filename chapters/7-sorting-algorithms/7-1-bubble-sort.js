@@ -26,4 +26,43 @@
  * [ 3, 4, 1, 5, 2 ] => 1, 5
  * [ 3, 4, 1, 2, 5 ] => 2, 5
  *
+ * Swapping algo example (ES5)
  */
+function swap (arr, idx1, idx2) {
+  let temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
+
+// ES2015 syntax
+const swapES = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+}
+
+/**
+ * Bubble Sort, Naive
+ *
+ * O(n^2) time complexity
+ * We don't further optimize because this isn't the most optimal
+ * algorithm anyways.
+ */
+function bubbleNaive (arr) {
+  let noSwaps;
+
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1]);
+
+      // swap
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwaps = false;
+      }
+    }
+    console.log('pass complete');
+    if (noSwaps) break;
+  }
+  return arr;
+}
