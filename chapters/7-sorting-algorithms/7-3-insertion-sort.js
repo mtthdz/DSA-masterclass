@@ -11,10 +11,8 @@
  * [ 1, 3, 4, 5, 2 ] => 2, [1, 3, 4, 5]
  * [ 1, 2, 3, 4, 5 ]
  * 
- * 
  * Insertion Sort, Pseudocode
  * O(n^2) time complexity
- * 
  * 
  * -> pick the second element in the array
  * -> compare the second element with the one before, swap if needed
