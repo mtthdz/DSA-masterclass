@@ -44,7 +44,7 @@ function insertionSort(arr) {
   return arr;
 }
 /**
- * visual explanation
+ * visual explanation (last index)
  * 
  * start at 1:
  * [2, 4, 9, 76, 1]
@@ -55,4 +55,4 @@ function insertionSort(arr) {
  * [1, 2, 4, 9, 76]  end of array, 1
  */
 
-insertionSort([2, 1, 9, 76, 4]);
+insertionSort([9, 4, 2, 76, 1]);
