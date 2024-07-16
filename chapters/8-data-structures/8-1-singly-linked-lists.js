@@ -15,7 +15,6 @@
  * Length = 4
  * 
  */
-
 class Node {
   constructor(val) {
     this.val = val;
@@ -23,12 +22,14 @@ class Node {
   }
 }
 
-// naive way to add nodes to the end
-// let first = new Node('hi')
-// first.next = new Node('there')
-// first.next.next = new Node('how')
-// first.next.next.next = new Node('are')
-// first.next.next.next.next = new Node ('you')
+/**
+ * naive way to add nodes to the end
+ * let first = new Node('hi')
+ * first.next = new Node('there')
+ * first.next.next = new Node('how')
+ * first.next.next.next = new Node('are')
+ * first.next.next.next.next = new Node ('you')
+ */
 
 class SinglyLinkedList {
   constructor() {
