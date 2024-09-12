@@ -57,16 +57,66 @@ class DoublyLinkedList {
   pop() {
     if (!this.head) return undefined;
     
-    let poppedNode = this.tail;
+    let oldTail = this.tail;
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
 
     } else {
-      this.tail = poppedNode.prev;
+      this.tail = oldTail.prev;
       this.tail.next = null;
-      poppedNode.prev = null;
+      oldTail.prev = null;
     }
+    this.length --;
+    return this;
+  }
+
+  /**
+   * Opposite of push, at the head rather than tail.
+   * if !head, set head + tail
+   * if head, set node.prev
+   * then, set node.head
+   * then, increment
+   */
+  unshift(val) {
+    let newNode = new Node(val);
+  
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length ++;
+    return this;
+  }
+
+  /**
+   * Opposite of pop; at the head rather than tail.
+   * if !head, return undefined
+   * store current head as "old head"
+   * if length === 1
+   *  set head && tail = null
+   *  update head as node.next of old head
+   *  set head.prev to null
+   */
+  shift() {
+    if (!this.head) return undefined;
+
+    let oldHead = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+
+    }
+
+    this.head = oldHead.next;
+    this.head.prev = null;
+    oldHead.next = null;
+
     this.length --;
     return this;
   }
