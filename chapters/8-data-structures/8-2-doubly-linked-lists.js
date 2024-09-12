@@ -120,4 +120,31 @@ class DoublyLinkedList {
     this.length --;
     return this;
   }
+
+  /**
+   * Find middle
+   * traverse from head/tail depending on middle
+   */
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    let middle = this.length / 2;
+    let count, current;
+
+    if (index <= middle) {
+      count = 0;
+      current = this.head;
+      while (count !== index) {
+        current = current.next;
+        count ++;
+      }
+    } else {
+      count = this.length - 1;
+      current = this.tail;
+      while (count !== index) {
+        current = current.prev;
+        count --;
+      }
+    }
+    return current;
+  }
 }
