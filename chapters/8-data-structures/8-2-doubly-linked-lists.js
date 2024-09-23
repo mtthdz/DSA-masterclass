@@ -147,4 +147,17 @@ class DoublyLinkedList {
     }
     return current;
   }
+
+  /**
+   * update value @ index
+   * easy to write with get, due to index param
+   */
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode !== null) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
 }
