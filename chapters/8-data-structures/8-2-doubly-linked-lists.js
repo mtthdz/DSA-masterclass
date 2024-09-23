@@ -202,6 +202,8 @@ class DoublyLinkedList {
     let removedNode = this.get(index);
     removedNode.prev.next = removedNode.next;
     removedNode.next.prev = removedNode.prev;
+    removedNode.next = null;
+    removedNode.prev = null;
     this.length --;
     return removedNode;
   }
