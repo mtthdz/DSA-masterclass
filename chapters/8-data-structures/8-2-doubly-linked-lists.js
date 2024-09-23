@@ -165,11 +165,12 @@ class DoublyLinkedList {
    * if index = 0, unshift
    * if index = length, push
    * otherwise, use get
-   * 
    * then, relink nodes
+   * 
+   * TODO: refactor variables for space complexity. Look below
    */
   insert(index, val) {
-    if (index < 0 || index > this.length) return false;
+    if (index < 0 || index > this.length) return undefined;
     if (index === 0) return this.unshift(val);
     if (index === this.length) return this.push(val);
 
@@ -183,5 +184,25 @@ class DoublyLinkedList {
     afterNode.prev = newNode;
     this.length ++;
     return this;
+  }
+
+  /**
+   * similar to insert
+   *
+   * if index = 0, shift
+   * if index = (length - 1), pop
+   * otherwise use get
+   * then, relink nodes
+   */
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let removedNode = this.get(index);
+    removedNode.prev.next = removedNode.next;
+    removedNode.next.prev = removedNode.prev;
+    this.length --;
+    return removedNode;
   }
 }
