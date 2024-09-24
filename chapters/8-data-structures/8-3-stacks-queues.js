@@ -21,7 +21,7 @@ stack.push('')
  * as it requires list iteration via while loop.
  *
  */ 
-class Node {
+class StackNode {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -42,8 +42,8 @@ class Stack {
    *   - set next property to temp var
    *   - increment
    */
-  push(val) {
-    let newNode = new Node(val);
+  push(value) {
+    let newNode = new StackNode(value);
     
     if (!this.first) {
       this.first = newNode;
@@ -78,5 +78,42 @@ class Stack {
 /**
  * Queues. Similar to stacks, we could use JS arr to implement,
  * but these are inefficient since we only need push/shift.
- * 
  */
+class QueueNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  enqueue(value) {
+    let newNode = new QueueNode(value);
+
+    if (!this.first) {
+      this.first = newNode;
+      this.last = newNode;
+
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    return ++this.size;
+  }
+
+  dequeue() {
+    if (!this.first) return null;
+    if (this.first === this.last) this.last = null;
+
+    let temp = this.first;
+    this.first = this.first.next;
+    this.size--;
+    return temp.value;
+  }
+}
