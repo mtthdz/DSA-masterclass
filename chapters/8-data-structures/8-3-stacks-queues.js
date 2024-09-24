@@ -73,3 +73,10 @@ class Stack {
     return temp.value;
   }
 }
+
+
+/**
+ * Queues. Similar to stacks, we could use JS arr to implement,
+ * but these are inefficient since we only need push/shift.
+ * 
+ */
