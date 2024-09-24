@@ -9,6 +9,12 @@
  * A dedicated stack class means we can strip all methods and indices as we
  * only require push/pop methods. More memory efficient.
  * 
+ * BigO
+ * insertion  O(1)
+ * removal    O(1)
+ * search     O(n)
+ * access     O(n)
+ * 
  * Method A: inefficient use of JS Array
  */
 let stack = [];
