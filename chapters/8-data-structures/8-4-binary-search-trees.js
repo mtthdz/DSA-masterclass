@@ -16,6 +16,10 @@
  *   / \    \
  *   3 8    20
  * 
+ * BST's have an average/best time complexity of O(log n), but is not guaranteed
+ * due to how the BST is structured.
+ * A completely right tree (like a sorted arr) can count as a BST, but would be
+ * better structured where the middle of the tree is the root.
  */
 class Node {
   constructor(value) {
@@ -35,6 +39,8 @@ class BST {
    * If root exists, we'll want to check if current node is 
    * greater or less than the new node. We traverse the tree accordingly
    * to place new node.
+   *
+   * Average/best time complexity: O(log n)
    */
   insert(value) {
     let newNode = new Node(value);
@@ -69,6 +75,8 @@ class BST {
 
   /**
    * similar functionality to insertion
+   *
+   * Average/best time complexity: O(log n)
    */
   contains(value) {
     if (!this.root) return undefined;
