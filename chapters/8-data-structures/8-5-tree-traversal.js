@@ -62,7 +62,14 @@ class BST {
    *  6    15
    * 3 8     20
    * 
-   * returns: [10, 6, 3, 8, 15, 20]
+   * stack 1 - current: 10,  [10, 6]                 left = true
+   * stack 2 - current: 6,   [10, 6, 3]              left = true
+   * stack 3 - current: 3,   [10, 6, 3, 8]           left = false, right = true
+   * stack 2 - current: 15,  [10, 6, 3, 8, 15]       left = false, right = true
+   * stack 1 - current: 20,  [10, 6, 3, 8, 15, 20]   left = false, right = true
+   * 
+   * Remembering that each recursive fn in the stack has its own memory, once stack 3
+   * returns no left nor right, it'll close and go to stack 2, repeating.
    */
   DFSPreOrder() {
     let data = [];
