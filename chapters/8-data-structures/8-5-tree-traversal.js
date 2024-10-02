@@ -73,15 +73,40 @@ class BST {
    */
   DFSPreOrder() {
     let data = [];
-    let current = this.root;
 
     function traverse(node) {
-      data.push(node);
+      data.push(node.value);
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
     }
 
-    traverse(current);
+    traverse(this.root);
+    return data;
+  }
+
+  /**
+   * Similar to preorder, but we visit siblings before returning parent. 
+   * Note that it's the same function as preorder, but we won't push the node until
+   * we check both left & right.
+   * 
+   * illustration:
+   *     10
+   *  6    15
+   * 3 8     20
+   * 
+   * [3, 8, 6, 20, 15, 10]
+   * 
+   */
+  DFSPostOrder() {
+    let data = [];
+
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+
+    traverse(this.root);
     return data;
   }
 }
