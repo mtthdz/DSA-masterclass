@@ -3,6 +3,17 @@
  * 
  * Two ways to traverse a tree, (1) breadth first, and (2) depth first.
  * In essence BFS is horizontal, DFS is vertical.
+ * 
+ * When to use BFS vs DFS? Depends on structure of tree, considering we have
+ * space complexity to worry about, due to recursive fns below (call stack).
+ * For very wide trees, DFS has less space complexity.
+ * For very thin trees, BFS works better (space complexity doesn't take a hit)
+ * 
+ * When to use variants of DFS?
+ * Notice that each variant returns a different sort order, InOrder returns
+ * numeric order (least to greatest).
+ * PreOrder returns an array that can be duplicated/flattened, where you 
+ * always know where the tree root is; makes it easy to recreate. 
  */
 class Node {
   constructor(value) {
@@ -112,6 +123,7 @@ class BST {
 
   /**
    * Very similar to preorder, but we traverse all of left before we look at right.
+   * Notice that inorder returns array in numeric order (least to greatest)
    * 
    * illustration:
    *     10
