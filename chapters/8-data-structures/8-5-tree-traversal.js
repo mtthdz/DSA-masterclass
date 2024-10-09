@@ -1,5 +1,5 @@
 /**
- * Chapter 8.5: Tree Traversal
+ * Chapter 8.5 - Tree Traversal
  * 
  * Two ways to traverse a tree, (1) breadth first, and (2) depth first.
  * In essence BFS is horizontal, DFS is vertical.
