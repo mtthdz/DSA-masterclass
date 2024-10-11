@@ -36,3 +36,47 @@
  * To determine parent nodes:
  * parent = (n - 1)/2 (floored)
  */
+class MaxBinaryHeap {
+  constructor() {
+    this.values = []
+  }
+  
+  /**
+   * Insert
+   * 
+   * push value into heap,
+   * "Bubble up" the value to its correct spot
+   * 
+   * we do this by:
+   * 1. finding last item n in heap, and its parent
+   * 2. compare n with parent, and swap whatever is larger
+   * 3. continue repeating process if n > parent
+   * 
+   * what's happening:
+   * 0 [41, 39, 33, 18, 27, 12, 55]
+   *     0   1   2   3   4   5   6
+   * 
+   * 1 [41, 39, 33, 18, 27, 12, 55]
+   * 2 [41, 39, 55, 18, 27, 12, 33] 55 swapped 33
+   * 3 [55, 39, 41, 18, 27, 12, 33] 55 swapped 41
+   */
+  insert(element) {
+    this.values.push(element);
+    this.bubbleUp();
+  }
+
+  bubbleUp() {
+    let currentIndex = this.values.length - 1;
+    const element = this.values[currentIndex];
+
+    while(true) {
+      let parentIndex = Math.floor((currentIndex - 1) / 2);
+      let parentValue = this.values[parentIndex];
+
+      if (parentValue => element) break;
+
+      this.values[parentIndex] = element;
+      this.values[currentIndex] = parentValue;
+    }
+  }
+}
